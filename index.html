@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hallo</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusMate | 2023</title>
+
+  <link rel="stylesheet" href="stylee.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
 </head>
 <body>
-    <p>
-        HELLO WORLD!
-    </p>
+
+<div id="wrapper">
+  <div id="time">
+    <div class="circle" style="--clr: #fff;">
+      <div class="dots pomo_dot"></div>
+      <svg>
+        <circle cx="80" cy="80" r="80"  />
+        <circle cx="80" cy="80" r="80" id="tt" />
+      </svg>
+      <div class="content">
+        <h2 id="timer-label">focus!</h2>
+        <p id="time-left">25:00</p>
+      </div>
+    
+    </div>
+  </div>
+
+  <div id="controls">
+    <button id="play-btn"><i class="fas fa-play"></i> PLAY</button>
+    <button id="pause-btn"><i class="fas fa-pause"></i> PAUSE</button>
+    <button id="skip-btn"><i class="fas fa-forward"></i> SKIP</button>
+  </div>
+</div>
+
+
+
+  <script src="scriptjs.js"></script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="timer">
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+      <defs>
+         <linearGradient id="GradientColor">
+            <stop offset="0%" stop-color="#e91e63" />
+            <stop offset="100%" stop-color="#673ab7" />
+         </linearGradient>
+      </defs>
+      <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+  </svg>
+
+    <div class="content">
+      <h2 id="timer-label">Pomodoro</h2>
+      <p id="time-left">25:00</p>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="play-btn">Play</button>
+    <button id="pause-btn">Pause</button>
+    <button id="skip-btn">Skip</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
