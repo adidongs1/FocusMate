@@ -1,14 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hallo</title>
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  </style>
+  <script>
+    function showForm(formId) {
+      var forms = document.querySelectorAll('.form-container');
+      for (var i = 0; i < forms.length; i++) {
+        forms[i].classList.add('hidden');
+      }
+      document.getElementById(formId).classList.remove('hidden');
+    }
+  </script>
 </head>
 <body>
-    <p>
-        HELLO WORLD!
-    </p>
+  <div class="menu">
+    <button onclick="showForm('loginForm')">Login</button>
+  </div>
+
+  <div id="loginForm" class="form-container">
+    <h2>Login</h2>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <input type="submit" value="Login">
+      <div class="form-link">
+        <button class="forgot-password" onclick="showForm('forgotPasswordForm')">Forgot Password</button>
+      </div>
+    </form>
+    <div class="form-link">
+      <button onclick="showForm('registerForm')">Register</button>
+    </div>
+  </div>
+
+  <div id="forgotPasswordForm" class="form-container hidden">
+    <h2>Forgot Password</h2>
+    <form>
+      <label for="forgotUsername">Username:</label>
+      <input type="text" id="forgotUsername" name="forgotUsername" required>
+      <input type="submit" value="Reset Password">
+    </form>
+  </div>
+
+  <div id="registerForm" class="form-container hidden">
+    <h2>Register</h2>
+    <form>
+      <label for="newUsername">Username:</label>
+      <input type="text" id="newUsername" name="newUsername" required>
+      <label for="newPassword">Password:</label>
+      <input type="password" id="newPassword" name="newPassword" required>
+      <input type="submit" value="Register">
+    </form>
+  </div>
 </body>
 </html>
