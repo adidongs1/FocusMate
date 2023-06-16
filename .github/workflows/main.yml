@@ -14,8 +14,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: focusmate.42web.io
+        server: focusmate.000webhostapp.com
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: /home/vol18_2/infinityfree.com/if0_34437386/
+        server-dir: /home/publiv_html/
          
