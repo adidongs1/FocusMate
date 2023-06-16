@@ -17,5 +17,5 @@ jobs:
         server: focusmate.42web.io
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        server-dir: //home/vol18_2/infinityfree.com/if0_34437386
+        server-dir: //home/vol18_2/infinityfree.com/if0_34437386/
          
