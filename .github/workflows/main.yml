@@ -1,0 +1,27 @@
+name: 🤘 ci/cd focusmate
+
+on:
+  push:
+    branches: [main] # Ganti dengan nama branch yang ingin Anda gunakan
+    
+jobs:
+  web-deploy:
+    name: 🤖 Auto Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🕔Get Latest Code
+        uses: actions/checkout@v2
+
+      # Tambahkan langkah-langkah lain di bawah ini sesuai kebutuhan Anda
+
+      - name: 🔗Sync File
+        uses: Burnett01/rsync-deployments@6.0.0
+        with:
+         switches: -avzr --delete --exclude=".git" --exclude=".github"
+         path: /
+         remote_path: /home/htdocs
+         remote_host: http://focusmate.42web.io
+         remote_user: if0_34437386
+         remote_key:: ""
+         
