@@ -1,113 +1,83 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+:root{
+  --mainFont :  'Noto Sans', sans-serif;
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  /* --headFont : 'Roboto', sans-serif; */
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #800080;
+  background-color: #FF00E5;
 }
 
-#wrapper{
-    display: flex;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: var(--mainFont); */
+  font-family: var(--mainFont);;
+  scroll-behavior: smooth;
+  
+ 
+}
+
+/* navbar */
+
+.navbrand-size{
+  font-size: 36px;
+}
+.navitem-size{
+  font-size: 24px;
+  font-weight: 500;
 }
 
 
-
-#time{
-    display: flex;
-    
-    /* background: cornflowerblue; */
+/* timer_pomo */
+.timer-pomo{
+  height: 100vh;
 }
 
-#time .circle{
-    position: relative;
-    width:     171.43px;
-    height:      171.43px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#time .circle svg{
-    position: relative;
-    width:      171.43px;
-    height:      171.43px;
-    transform: rotate(270deg);
+.container.timers{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
   
 }
 
-#time .circle svg circle{
-    width: 100%;
-    height: 100%;
-    fill: transparent;
-    stroke-width: 10;
-    stroke: #282828;
-    transform: translate(5px,5px);
+.card.card-timer{
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(221, 41, 41, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#time .circle svg circle:nth-child(2){
-    stroke: var(--clr);
-    stroke-dasharray: 503;
+#timer {
+  font-size: 80px;
+  font-weight: bold;
 }
 
-#time div{
-   position: absolute;
-   text-align: center;
-   font-weight: 500;
-   color: #fff;
-   font-size: 0.9em;
-   text-transform: uppercase;
-
+#buttons {
+  text-align: center;
+  margin-top: 20px;
 }
 
-#time .dots {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    z-index: 1000;
+.btn.btn-label{
+  color: #fff;
+  font-weight: bold;
 }
 
-/* #time .dots::before{
-    content: '';
-    position: absolute;
-    top: -3px;
-    width: 20px;
-    height: 20px;
-    background-color: #3498db;
-    border-radius: 50%;
+.btn.btn-label.active {
+  background-color: #5FFB00;
+  color: #000;
+}
 
-} */
+.btn-start{
+  background-color: #5FFB00;
+}
 
+.btn-skip{
+  background-color: rgba(95, 251, 0, 0.5);
+}
 
-#controls {
-    text-align: center;
-
-  }
-  
-  #controls button {
-    width: 110px;
-    height:  61.875;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
