@@ -1,4 +1,23 @@
 <!doctype html>
+
+
+<!-- janlupa section ini di copypasteyaa -->
+
+<?php
+include("inc_koneksi.php");
+
+session_start();
+if(!isset($_SESSION['email'])){
+    header('location:login.php');
+    exit();
+}
+
+
+?>
+
+
+
+
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -17,7 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css -->
-    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="../stylee.css">
 
     <title>FocusMate</title>
   </head>
@@ -32,7 +51,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
                 <li class="nav-item">
-                  <a class="nav-link active navitem-size" aria-current="page" href="dist/login.php">LOGIN</a>
+                  <a class="nav-link active navitem-size" aria-current="page" href="login.php">LOGOUT</a>
                 </li>
                 <li class="nav-item ">
                   <a class="nav-link navitem-size" href="#">REPORT</a>
@@ -79,7 +98,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!--  js -->
-    <script src="scriptjs.js"></script>
+    <script src="../scriptjs.js"></script>
   </body>
 </html>
 
