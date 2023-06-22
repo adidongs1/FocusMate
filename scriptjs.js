@@ -1,104 +1,102 @@
-var pomodoroTime = 25; // 25 minutes in seconds
-var shortBreakTime = 5 ; // 5 minutes in seconds
-var longBreakTime = 15 ; // 15 minutes in seconds
-
-var sessionType = 'pomodoro'; // initial session type
-var timeLeft = pomodoroTime; // initial time left
 var timerInterval;
-
-var playButton = document.getElementById('play-btn');
-var pauseButton = document.getElementById('pause-btn');
-var skipButton = document.getElementById('skip-btn');
-var timerLabel = document.getElementById('timer-label');
-var timeDisplay = document.getElementById('time-left');
-var circleProgress = document.getElementById('tt');
-
-playButton.addEventListener('click', startTimer);
-pauseButton.addEventListener('click', pauseTimer);
-skipButton.addEventListener('click', skipTimer);
+var minutes = 25;
+var seconds = 0;
+var isTimerRunning = false;
+var sessionType = "work";
+var sessionCount = 0;
+var sessions = [
+  { type: "work", duration: 25 },
+  { type: "shortBreak", duration: 5 },
+  { type: "work", duration: 25 },
+  { type: "shortBreak", duration: 5 },
+  { type: "work", duration: 25 },
+  { type: "shortBreak", duration: 5 },
+  { type: "work", duration: 25 },
+  { type: "longBreak", duration: 15 }
+];
 
 function startTimer() {
-  timerInterval = setInterval(updateTimer, 1000);
-  playButton.disabled = true;
-  pauseButton.disabled = false;
-  skipButton.disabled = false;
-}
-
-function pauseTimer() {
-  clearInterval(timerInterval);
-  playButton.disabled = false;
-  pauseButton.disabled = true;
-  skipButton.disabled = false;
-}
-
-function skipTimer() {
-  clearInterval(timerInterval);
-  playButton.disabled = false;
-  pauseButton.disabled = true;
-  skipButton.disabled = true;
-  switchSession();
-  updateTimerLabel(); // Update timer label without starting the timer
-  updateTimeDisplay(); // Update time display without starting the timer
-  updateCircleProgress();
+  if (!isTimerRunning) {
+    isTimerRunning = true;
+    timerInterval = setInterval(updateTimer, 1000);
+    document.getElementById("startButton").innerHTML = "Pause";
+    document.getElementById("skipButton").classList.remove("d-none");
+  } else {
+    isTimerRunning = false;
+    clearInterval(timerInterval);
+    document.getElementById("startButton").innerHTML = "Start";
+  }
 }
 
 function updateTimer() {
-  timeLeft--;
+  var timerDisplay = document.getElementById("timer");
 
-  if (timeLeft < 0) {
+  if (seconds > 0) {
+    seconds--;
+  } else if (minutes > 0) {
+    minutes--;
+    seconds = 59;
+  } else {
     clearInterval(timerInterval);
-    switchSession();
-    updateTimerLabel(); // Update timer label without starting the timer
-    updateTimeDisplay(); // Update time display without starting the timer
-    playButton.disabled = false; // Enable the play button
+    isTimerRunning = false;
+    document.getElementById("startButton").innerHTML = "Start";
+    document.getElementById("skipButton").classList.add("d-none");
+    sessionCount++;
+    if (sessionCount >= sessions.length) {
+      sessionCount = 0;
+    }
+    sessionType = sessions[sessionCount].type;
+    minutes = sessions[sessionCount].duration;
+    seconds = 0;
+    document.getElementById("timer").innerHTML =
+      formatTime(minutes) + ":" + formatTime(seconds);
+    setActiveButton(sessionType);
   }
 
-  updateTimeDisplay(); // Update time display every second
-  updateCircleProgress(); // Update circle progress every second
+  timerDisplay.innerHTML = formatTime(minutes) + ":" + formatTime(seconds);
 }
 
-function switchSession() {
-  if (sessionType === 'pomodoro') {
-    sessionType = 'shortBreak';
-    timeLeft = shortBreakTime;
-    circleProgress.style.stroke = '#009688';
-  } else if (sessionType === 'shortBreak') {
-    sessionType = 'pomodoro';
-    timeLeft = pomodoroTime;
-    circleProgress.style.stroke = '#FF5722';
+function formatTime(time) {
+  return time < 10 ? "0" + time : time;
+}
+
+function skipSession() {
+  clearInterval(timerInterval);
+  isTimerRunning = false;
+  document.getElementById("startButton").innerHTML = "Start";
+  document.getElementById("skipButton").classList.add("d-none");
+  sessionCount++;
+  if (sessionCount >= sessions.length) {
+    sessionCount = 0;
   }
-
-  updateTimerLabel(); // Update timer label after switching session
+  sessionType = sessions[sessionCount].type;
+  minutes = sessions[sessionCount].duration;
+  seconds = 0;
+  document.getElementById("timer").innerHTML =
+    formatTime(minutes) + ":" + formatTime(seconds);
+  setActiveButton(sessionType);
 }
 
-function updateTimerLabel() {
-  if (sessionType === 'pomodoro') {
-    timerLabel.textContent = 'Pomodoro';
-  } else if (sessionType === 'shortBreak') {
-    timerLabel.textContent = 'Short Break';
+function setSession(type) {
+  sessionType = type;
+  sessionCount = sessions.findIndex((session) => session.type === type);
+  minutes = sessions[sessionCount].duration;
+  seconds = 0;
+  document.getElementById("timer").innerHTML =
+    formatTime(minutes) + ":" + formatTime(seconds);
+  setActiveButton(type);
+}
+
+function setActiveButton(type) {
+  document.getElementById("pomodoroButton").classList.remove("active");
+  document.getElementById("shortBreakButton").classList.remove("active");
+  document.getElementById("longBreakButton").classList.remove("active");
+
+  if (type === "work") {
+    document.getElementById("pomodoroButton").classList.add("active");
+  } else if (type === "shortBreak") {
+    document.getElementById("shortBreakButton").classList.add("active");
+  } else if (type === "longBreak") {
+    document.getElementById("longBreakButton").classList.add("active");
   }
 }
-
-function updateTimeDisplay() {
-  var minutes = Math.floor(timeLeft / 60);
-  var seconds = timeLeft % 60;
-
-  timeDisplay.textContent = minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
-}
-
-function updateCircleProgress() {
-  var totalTime;
-
-  if (sessionType === 'pomodoro') {
-    totalTime = pomodoroTime;
-  } else if (sessionType === 'shortBreak') {
-    totalTime = shortBreakTime;
-  }
-
-  var progress = 100 - ((timeLeft / totalTime) * 100);
-  circleProgress.style.strokeDashoffset = (progress * 502.65) / 100;
-}
-
-updateTimerLabel(); // Set initial timer label
-updateTimeDisplay(); // Set initial time display
-updateCircleProgress(); // Set initial circle progress

@@ -1,0 +1,145 @@
+:root{
+    --mainFont :  'Noto Sans', sans-serif;
+  
+    /* --headFont : 'Roboto', sans-serif; */
+  }
+  
+  body{
+    background-color: #FF00E5;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: var(--mainFont); */
+    font-family: var(--mainFont);;
+    scroll-behavior: smooth;
+    
+   
+  }
+
+  /* navbar */
+
+.navbrand-size{
+    font-size: 36px;
+  }
+  .navitem-size{
+    font-size: 24px;
+    font-weight: 500;
+  }
+    /* login gmail */
+
+    .btn-gmail{
+        height: 40px;
+        border-radius: 10px;
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);;
+    }
+
+    
+    .btn-gmail:hover{
+        height: 40px;
+        border-radius: 10px;
+        background-color: #fff;
+        color: #000;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);;
+    }
+
+    .logo-gmail{
+        width: 21px;
+        height: 21px;
+        margin-right: 10px;
+      }
+
+     
+  /* alert warning */
+  .alert{
+    width: 430px;
+  }
+
+  /* login form */
+  .global-container{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .login-form{
+    height: 500px;
+    width: 430px;
+    padding: 0 35px;
+    background-color:#fff ;
+    border: none;
+    border-radius: 10px;
+  }
+
+  input[type="email"],
+  input[type="password"]{
+    border-radius: 10px;
+    transition: .3s;
+  }
+
+  .btnRegis{
+
+    height: 40px;
+    border-radius: 10px;
+    background-color: #FF00E5;
+    color: #fff;
+  }
+
+  .btnRegis:hover{
+
+    height: 40px;
+    border-radius: 10px;
+    background-color: #ff00e63b;
+    color: #000;
+  }
+
+  .rem-pass{
+    font-size: 12px;
+  }
+
+  .forgot-pass a{
+    color: #FF00E5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+ 
+  .register label{
+    font-size: 12px;
+  }
+
+  .register label a{
+    color: #FF00E5;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 3px;
+  }
+
+
+  /* pembatas */
+  .line-container {
+    position: relative;
+    text-align: center;
+  }
+  
+  .line {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 0;
+  }
+  
+  .line-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 0 10px;
+  }
+
+
