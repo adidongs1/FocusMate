@@ -4,7 +4,6 @@
 <!-- janlupa section ini di copypasteyaa -->
 
 <?php
-include("inc_koneksi.php");
 
 session_start();
 if(!isset($_SESSION['email'])){
@@ -13,7 +12,11 @@ if(!isset($_SESSION['email'])){
 }
 
 
+include 'inc_koneksi.php';
 ?>
+
+<<!-- sampe sini -->
+
 
 
 
@@ -51,7 +54,9 @@ if(!isset($_SESSION['email'])){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-uppercase">
                 <li class="nav-item">
-                  <a class="nav-link active navitem-size" aria-current="page" href="login.php">LOGOUT</a>
+
+                  <a class="nav-link active navitem-size" aria-current="page" href="logout.php">LOGOUT</a>
+
                 </li>
                 <li class="nav-item ">
                   <a class="nav-link navitem-size" href="#">REPORT</a>

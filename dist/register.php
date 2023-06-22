@@ -26,7 +26,7 @@
     <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark ">
           <div class="container justify-content-center">
-            <a class="navbar-brand fw-bold navbrand-size " href="#">FOCUSMATE</a>
+            <a class="navbar-brand fw-bold navbrand-size " href="../index.html">FOCUSMATE</a>
           </div>
         </nav>
     <!-- Akhir navbar -->
@@ -56,18 +56,18 @@
                         <form action="" method="post">
                             <div class="mb-4 fw-bold">
                               <label for="email" class="form-label">Email</label>
-                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@mail.com" name="email" >
+                              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@mail.com" name="email" required >
                             </div>
                             <div class="mb-2 fw-bold">
                               <label for="password" class="form-label">Password</label>
-                              <input type="password" class="form-control" id="password"placeholder="your password" name="password">
+                              <input type="password" class="form-control" id="password"placeholder="your password" name="password" required>
                             </div>
 
                   
 
 
                             <div class="d-grid mt-5 ">
-                                <button type="submit" name="btn-register" class="btn fw-bold btn-register">Sign up with Email</button>
+                                <button type="submit" name="btn-register" class="btn fw-bold btnRegis">Sign up with Email</button>
                             </div>
 
                             <div class="register mt-2">
@@ -100,7 +100,7 @@
 
 <?php
 
-include ("inc_koneksi.php");
+include 'inc_koneksi.php';
 if(isset($_POST['btn-register'])){
   $email=$_POST['email'];
   $password=password_hash($_POST['password'],PASSWORD_BCRYPT) ;
@@ -111,9 +111,15 @@ if(isset($_POST['btn-register'])){
     echo"
           <script>
           alert('Sign up success! You can now log in with your email and password.');
-          window.location.href='login.php';
+          window.location.href='login.php'
         </script>
     ";
+  }else{
+    echo"
+    <script>
+    alert('Sign up Failed! Please use another email.');
+  </script>
+";
   }
 }
 
