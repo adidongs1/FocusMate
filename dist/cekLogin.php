@@ -2,10 +2,10 @@
 
 include("inc_koneksi.php");
 
-
 if(isset($_POST['btn-login'])){
     $email      =$_POST['email'];
     $password   =$_POST['password'];
+
 
     $query  =mysqli_query($koneksi, "SELECT * FROM tb_user WHERE email='$email'");
     $data   =mysqli_fetch_array($query);

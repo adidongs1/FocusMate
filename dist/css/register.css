@@ -84,6 +84,7 @@
   }
 
   .btnRegis{
+
     height: 40px;
     border-radius: 10px;
     background-color: #FF00E5;
@@ -91,6 +92,7 @@
   }
 
   .btnRegis:hover{
+
     height: 40px;
     border-radius: 10px;
     background-color: #ff00e63b;
