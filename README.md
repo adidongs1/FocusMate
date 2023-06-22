@@ -8,3 +8,7 @@ The FocusMate website is a website that helps its users to be able to focus on t
 - User Story Doc: [UserStoryNexus](https://ungu.in/userStoryNexus)
 
 **FOR TEAM NEXUS:** Please send me a message so I will receive your request soon! 🤘
+
+
+**Disclaimer: This is a personal website, not for commercial purposes.**
+
