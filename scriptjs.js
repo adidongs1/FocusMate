@@ -31,6 +31,12 @@ function startTimer() {
 function updateTimer() {
   var timerDisplay = document.getElementById("timer");
 
+  if (minutes === 2 && seconds === 0) {
+    playNotificationEndSound(); // Memainkan bunyi notifikasi saat tersisa 2 menit
+    showNotification("Sisa Waktu", "Tinggal 2 menit lagi, Disiplin yuk"); // Menampilkan notifikasi web saat tersisa 2 menit
+ 
+  }
+
   if (seconds > 0) {
     seconds--;
   } else if (minutes > 0) {
@@ -51,6 +57,9 @@ function updateTimer() {
     document.getElementById("timer").innerHTML =
       formatTime(minutes) + ":" + formatTime(seconds);
     setActiveButton(sessionType);
+    playNotificationSound(); // Memainkan bunyi notifikasi saat sesi berakhir
+    showNotification("Sesi Berakhir", "Sesi " + sessionType + " telah berakhir."); // Menampilkan notifikasi web saat sesi berakhir
+ 
   }
 
   timerDisplay.innerHTML = formatTime(minutes) + ":" + formatTime(seconds);
@@ -100,3 +109,63 @@ function setActiveButton(type) {
     document.getElementById("longBreakButton").classList.add("active");
   }
 }
+
+function playNotificationSound() {
+  var audio = new Audio("assets/endSound.mp3");
+  audio.play();
+}
+
+function playNotificationEndSound() {
+  var alarm = new Audio("assets/tersisa.mp3");
+  alarm.play();
+}
+
+
+function showNotification(title, message) {
+  console.log(Notification.permission)
+  if (Notification.permission === "granted") {
+    new Notification(title, { body: message });
+  } else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(permission => {
+      console.log(permission)
+      if (permission === "granted") {
+        new Notification(title, { body: message });
+      }
+    });
+  }
+}
+
+
+//sttings
+// Mengambil elemen close button
+var closeButton = document.querySelector(".close");
+
+// Menambahkan event listener untuk menangani klik pada close button
+closeButton.addEventListener("click", function(event) {
+  event.preventDefault(); // Mencegah aksi default saat tombol diklik
+
+  // Menutup modal setting
+  document.getElementById("id01").style.display = "none";
+});
+
+
+document.getElementById("saveButton").addEventListener("click", function(event) {
+  event.preventDefault(); // Mencegah form dikirim secara default
+
+  // Mengambil nilai dari input form
+  var pomodoroDuration = parseInt(document.getElementsByName("pomodoro")[0].value);
+  var shortBreakDuration = parseInt(document.getElementsByName("short-break")[0].value);
+  var longBreakDuration = parseInt(document.getElementsByName("long-break")[0].value);
+
+  // Mengubah durasi sesi sesuai dengan nilai yang diinputkan
+  sessions[0].duration = pomodoroDuration;
+  sessions[1].duration = shortBreakDuration;
+  sessions[3].duration = pomodoroDuration;
+  sessions[4].duration = shortBreakDuration;
+  sessions[6].duration = pomodoroDuration;
+  sessions[7].duration = longBreakDuration;
+
+  // Mengatur sesi saat ini berdasarkan perubahan durasi
+  setSession(sessionType);
+  document.getElementById("id01").style.display = "none";
+});

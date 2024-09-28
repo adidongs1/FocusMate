@@ -1,0 +1,232 @@
+:root{
+    --mainFont :  'Noto Sans', sans-serif;
+  
+    /* --headFont : 'Roboto', sans-serif; */
+  }
+  
+  body{
+    background-color: #FF00E5;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: var(--mainFont); */
+    font-family: var(--mainFont);;
+    scroll-behavior: smooth;
+    
+   
+  }
+  
+  /* navbar */
+  
+  .navbrand-size{
+    font-size: 36px;
+  }
+  .navitem-size{
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  
+  /* timer_pomo */
+  .timer-pomo{
+    height: max-content;
+  }
+  
+  .container.timers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+  }
+  
+  .card.card-timer{
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(221, 41, 41, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #timer {
+    font-size: 80px;
+    font-weight: bold;
+  }
+  
+  #buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .btn.btn-label{
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .btn.btn-label.active {
+    background-color: #5FFB00;
+    color: #000;
+  }
+  
+  .btn-start{
+    background-color: #5FFB00;
+  }
+  
+  .btn-skip{
+    background-color: rgba(95, 251, 0, 0.7);
+  }
+  
+  
+  /* SETTINGS */
+  /* signup */
+  .container-settings{
+  background-color: #fff;
+  padding: 16px;
+  } 
+  /* The Modal (background) */
+  .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 50px;
+  }
+  .modal .heading{
+  color: #000;
+  font-size: 32px;
+  }
+  .modal .subheading{
+  color: #000;
+  font-size: 22px;
+  }
+  
+  
+  /* Modal Content/Box */
+  .modal-content {
+  background-color: var(--primaryColor);
+  margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* Style the horizontal ruler */
+  hr {
+  border: 1px solid;
+  
+  }
+  
+  /* The Close Button (x) */
+  .close {
+  position: absolute;
+  right: 30px;
+  top: -10px;
+  font-size: 60px;
+  font-weight: bold;
+  color: #f44336;
+  }
+  
+  .close:hover {
+  color: #f44336;
+  text-shadow: 2px 2px 4px #000000;
+  cursor: pointer;
+  }
+  
+  .btn-saves{
+  background-color: #5FFB00;
+  }
+  
+  .btn-saves:hover{
+  box-shadow: 2px 2px 4px #000;
+  }
+
+
+
+  /* daftar agar todolist */
+  
+  .container.get-fitur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .get-fitur-box{
+    background-color: #5FFB00;
+    padding: 2%;
+    border: 5px dashed #000;
+    max-width: 400px;
+  }
+
+  .get-fitur-box p{
+    font-weight: 600;
+  
+  }
+
+  .get-fitur-box a{
+    color: #FF00E5;
+  }
+
+
+
+
+   /* pomodoro desc  */
+#pomodoro-section {
+    /* max-width: 600px; */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+  }
+  
+  
+  h2.pomo-desc-title {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  hr.garisbawah {
+    color: #FF00E5;
+    margin-top: 5px;
+    border-radius: 20px;
+    border-bottom: 5px solid;
+    width: 10%;
+  }
+  
+  .pomo-desc p {
+    text-align: justify;
+    text-indent: 40px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+  .warna  {
+    color:#FF00E5;
+    font-weight: bold;
+  }
+  
+  .p.task{
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  
+/* footer */
+  footer p{
+    text-align: center;
+    font-size: 50%;
+    text-shadow: 2px 2px 4px #000000;
+  }
+
+  footer p a{
+    color: #fff;
+  }
+
+  

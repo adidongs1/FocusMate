@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css -->
-    <link rel="stylesheet" href="stylee.css">
+    <link rel="stylesheet" href="style.css">
 
     <title>FocusMate</title>
   </head>
@@ -34,17 +34,57 @@
                 <li class="nav-item">
                   <a class="nav-link active navitem-size" aria-current="page" href="dist/login.php">LOGIN</a>
                 </li>
-                <li class="nav-item ">
-                  <a class="nav-link navitem-size" href="#">REPORT</a>
-                </li>
                 <li class="nav-item">
-                  <a class="nav-link navitem-size" href="#">SETTING</a>
+                  <a class="nav-link navitem-size" href="#" onclick="document.getElementById('id01').style.display='block'">SETTING</a>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
     <!-- Akhir navbar -->
+
+
+          <!-- SETTING --> 
+          <div id="id01" class="modal">
+            <form class="modal-content">
+              <div class="container container-settings" >
+                <div class="close" title="Close Modal">&times;</div>
+                <h1 class="heading">Setting</h1>
+      
+                <hr class="my-3">
+      
+                <h5 class="align-items-center"><i class="fa-regular fa-clock me-2"></i>Timers <span class="text-muted">(minutes)</span></h5>
+               
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label for="pomodoroInput" class="form-label">Pomodoro</label>
+                    <input class="form-control" id="pomodoroInput" placeholder="Amount" type="number" name="pomodoro" value="25" min="10" max="99">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="shortBreakInput" class="form-label">Short Break</label>
+                    <input class="form-control" id="shortBreakInput" placeholder="Amount" type="number" name="short-break" value="5" min="2" max="30">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="longBreakInput" class="form-label">Long Break</label>
+                    <input class="form-control" id="longBreakInput" placeholder="Amount" type="number" name="long-break" value="15" min="5" max="60">
+                  </div>
+                  </div>
+      
+                  <hr class="my-3">
+      
+                  <div class="col-12 mt-3">
+                    <button type="submit"  id="saveButton" class="btn btn-saves">Save </button>
+                  </div>
+                </div>
+      
+      
+      
+      
+              </div>
+            </form>
+          </div>
+
+
 
     <!-- section timer -->
         <div class="timer-pomo py-4">
@@ -63,13 +103,95 @@
               </div>
           </div>
       </div>
-        </div>
-          
-        </div>
-    
+        </div>  
+      
     <!-- akhir timer -->
-    
 
+    <!-- todo list daftar -->
+
+   
+    <div class="container get-fitur mb-3">
+      <div class="get-fitur-box text-center">
+        <p>Dapatkan Fitur Aktifitas Harian Anda! Mendaftar atau login email untuk menikmati fitur todo-list.</p>
+
+        <a href="register.php">Create an account</a>
+      </div>
+    </div>
+
+
+    <!-- akhir todo list daftar -->
+
+      <!-- pomodoro desc -->
+      <section id="pomodoro-section" class="mt-5">
+        <div class="container pomo-desc">
+  
+            <h2 class="pomo-desc-title">Apa itu Focusmate?</h2>
+            <hr class="garisbawah">
+    
+            <p>
+              <span class="warna">Focusmate</span> adalah sebuah aplikasi berbasis web yang dirancang untuk membantu pengguna meningkatkan fokus dan produktivitas mereka. Focusmate memanfaatkan konsep akuntabilitas dan dukungan dari sesama pengguna untuk menciptakan lingkungan kerja virtual yang terstruktur.
+    
+              Dalam Focusmate, setiap pengguna berkomitmen untuk menjelaskan tugas yang akan mereka kerjakan pada awal sesi. Hal ini membantu mengarahkan fokus dan memastikan pengguna bekerja pada tugas yang dijadwalkan. 
+    
+    
+              <p>Teknik Pomodoro juga menjadi salah satu motif utama di balik pengembangan <span>Focusmate</span>. Aplikasi ini mengadopsi prinsip-prinsip dasar teknik Pomodoro dan memadukannya dengan fitur-fitur unik yang ditawarkan.
+                </p>
+              
+            </p> <br> <br>
+    
+            <h2 class="pomo-desc-title">Apa itu Teknik Pomodoro?</h2>
+            <hr class="garisbawah">
+            <p>
+                Teknik Pomodoro adalah sebuah metode manajemen waktu yang dikembangkan oleh <span class="warna">Francesco Cirillo</span> pada akhir 1980-an. Metode ini dirancang untuk meningkatkan produktivitas dengan memanfaatkan prinsip fokus dan istirahat secara bergantian.
+            </p>
+            <p>
+              Nama "Pomodoro" berasal dari bahasa Italia yang berarti "tomat". Cirillo memilih nama ini karena menggunakan sebuah timer dapur berbentuk tomat saat ia mengembangkan teknik ini.
+              Dalam metode Pomodoro, waktu kerja dibagi menjadi periode fokus yang disebut "pomodoro" yang masing-masing berdurasi sekitar 25 menit. Setiap periode pomodoro diikuti oleh istirahat singkat selama 5 menit. Setelah empat periode pomodoro, dilakukan istirahat yang lebih panjang, sekitar 15-30 menit.
+            </p> <br>
+    
+            <h2 class="pomo-desc-title">Bagaimana Cara menggunakan Focusmate?</h2>
+            <hr class="garisbawah">
+    
+            <p class="task"> <br>
+              
+            <span class="warna">1. Tambahkan task untuk dikerjakan.</span> <br>Daftarkan atau masukkan daftar tugas yang perlu Anda selesaikan pada hari tersebut. Misalnya, daftar tugas dapat berisi "Menulis laporan proyek", "Membalas email klien", "Persiapan rapat", dll. <br><br>
+    
+            <span class="warna">2. Tetapkan perkiraan waktu untuk setiap sesi.</span> <br> Tentukan berapa banyak waktu yang dibutuhkan untuk setiap sesi: <span class="warna">Pomodoro</span>,  <span class="warna">Short Break</span>, dan  <span class="warna">Long Break</span>. <br><br>
+    
+            <span class="warna">3. Mulai timer dan fokus pada tugas selama waktu yang ditentukan.</span> <br> Klik tombol  <a href="#" class="btn-start px-4" style="text-decoration: none; color: #000;">START</a> untuk memulai timer. kamu juga bisa menghentikan waktu dengan tombol <a href="#" class="btn-start px-4" style="text-decoration: none; color: #000;">PAUSE</a>, dan melewati setiap sesi dengan tombol <a href="#" class="btn-skip px-4" style="text-decoration: none; color: #000;">SKIP</a>. <br><br>
+    
+            <span class="warna">4. Gunakan FOCUSMATE ini sebagai kesempatan untuk meningkatkan produktivitasmu.</span> <br> Saat alarm berbunyi dan timer berhenti,  berhenti sejenak dan evaluasi seberapa jauh kamu telah mencapai tujuanmu. <br><br>
+    
+            <span class="warna">5.Saat sesi istirahat, berhentilah melakukan pekerjaan apapun.</span> <br> Cobalah untuk benar-benar memisahkan dirimu dari pekerjaan selama sesi istirahat ini. Istirahat sepenuhnya dan nikmati momen ini.<br><br>
+    
+            <span class="warna">6. Lakukan iterasi 3-5 kali hingga menyelesaikan tugas-tugas.</span> <br> Setelah istirahat, kembali ke langkah 3 dan jika tugasmu sudah selesai jangan lupa untuk menandai dengan centang pada tugas yang sudah selesai. Ulangi langkah-langkah 4 dan 5 hingga Anda menyelesaikan semua tugas yang telah ditetapkan. <br><br>
+    
+            <p>Teknik Pomodoro menggabungkan periode fokus intensif dengan istirahat terjadwal untuk membantu meningkatkan produktivitas dan menjaga stamina mental. Dengan menerapkan metode ini, Anda dapat memecah pekerjaan menjadi potongan-potongan yang lebih kecil, menjaga fokus yang tinggi selama periode kerja, dan memberikan waktu istirahat yang diperlukan untuk menghindari kelelahan dan menjaga </p>
+                  
+    
+         
+  
+        </div>
+  
+          
+        
+  
+      </section>
+
+      <!-- akhir pomo sectin -->
+
+            <!-- footer -->
+
+            <footer>
+              <div class="row mt-3 col-copyright">
+                  <div class="col text-center">
+                      <p class="text-white">&copy;This website is the ANT Vape Store landing page which was created with the aim of completing the final assignment for a digital business course. not selling anything.| Built by <a href="#">NEXUS TEAM</a></p>
+                    
+                  </div>
+              </div>
+              </footer>
+      
+              <!-- akhir footer -->
 
 
 
