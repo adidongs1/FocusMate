@@ -6,8 +6,6 @@ $db_name    = "db_focusmate";
 
 $koneksi    = mysqli_connect($db_host, $db_email, $db_pass, $db_name);
 
-if(!$koneksi){
-   die ("koneksi gagal");
+if (!$koneksi) {
+   die("koneksi gagal");
 }
-
-?>

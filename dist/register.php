@@ -41,25 +41,15 @@
                 <div class="card-body">
                     <h1 class="card-title mb-4">Register</h1>
 
-                    <div class="d-grid mb-3">
-                        <button type="submit" class="btn text-muted btn-gmail"><img src="../assets/google-logo-icon-png.png" class="logo-gmail">Sign up with Google</button>
-                    </div>
-
-                    <div class="barrier-form my-4">
-                        <div class="line-container">
-                            <hr class="line">
-                            <span class="line-text text-muted">or</span>
-                          </div>
-                    </div>
-
                     <div class="card-text">
-                        <form action="" method="post">
+  <!-- form register disini -->
+                        <form action="proses/registerProses.php" method="post">
                             <div class="mb-4 fw-bold">
                               <label for="email" class="form-label">Email</label>
                               <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@mail.com" name="email" required >
                             </div>
-                            <div class="mb-2 fw-bold">
-                              <label for="password" class="form-label">Password</label>
+                            <div class="mb-2">
+                              <label for="inputPassword5" class="form-label fw-bold">Password</label>
                               <input type="password" class="form-control" id="password"placeholder="your password" name="password" required>
                             </div>
 
@@ -100,28 +90,28 @@
 
 <?php
 
-include 'inc_koneksi.php';
-if(isset($_POST['btn-register'])){
-  $email=$_POST['email'];
-  $password=password_hash($_POST['password'],PASSWORD_BCRYPT) ;
+// include 'inc_koneksi.php';
+// if(isset($_POST['btn-register'])){
+//   $email=$_POST['email'];
+//   $password=password_hash($_POST['password'],PASSWORD_BCRYPT) ;
 
-  $query=mysqli_query($koneksi, "INSERT INTO tb_user VALUES('$email','$password')");
+//   $query=mysqli_query($koneksi, "INSERT INTO tb_user VALUES('$email','$password')");
 
-  if($query){
-    echo"
-          <script>
-          alert('Sign up success! You can now log in with your email and password.');
-          window.location.href='login.php'
-        </script>
-    ";
-  }else{
-    echo"
-    <script>
-    alert('Sign up Failed! Please use another email.');
-  </script>
-";
-  }
-}
+//   if($query){
+//     echo"
+//           <script>
+//           alert('Sign up success! You can now log in with your email and password.');
+//           window.location.href='login.php'
+//         </script>
+//     ";
+//   }else{
+//     echo"
+//     <script>
+//     alert('Sign up Failed! Please use another email.');
+//   </script>
+// ";
+//   }
+// }
 
 ?>
 

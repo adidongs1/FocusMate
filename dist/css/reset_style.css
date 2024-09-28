@@ -1,0 +1,57 @@
+:root{
+    --mainFont :  'Noto Sans', sans-serif;
+  
+    /* --headFont : 'Roboto', sans-serif; */
+  }
+  
+  body{
+    background-color: #FF00E5;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: var(--mainFont); */
+    font-family: var(--mainFont);;
+    scroll-behavior: smooth;
+    
+   
+  }
+
+  /* navbar */
+
+.navbrand-size{
+    font-size: 36px;
+  }
+  .navitem-size{
+    font-size: 24px;
+    font-weight: 500;
+  }
+   
+     
+  /* alert warning */
+  .alert{
+    width: 430px;
+  }
+
+
+  .container.reset-form{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: auto;
+    width: 430px;
+    padding: 15px 35px;
+    background-color:#fff ;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+
+  .btn-reset{
+    background-color: #5FFB00;
+    width: 100%;
+  }

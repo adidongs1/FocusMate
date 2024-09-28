@@ -43,7 +43,17 @@
         </nav>
     <!-- Akhir navbar -->
 
+      <div class="global-container">
+      <?php
+              if(isset($_GET['msg'])) {
+            ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+               <?php echo $_GET['msg']; ?>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
 
+            <?php } ?>
+      </div>
 
     <!-- Section login -->
         <div class="global-container">
@@ -66,18 +76,8 @@
                 <div class="card-body">
                     <h1 class="card-title mb-4">Login</h1>
 
-                    <div class="d-grid mb-3">
-                        <button type="submit" class="btn text-muted btn-gmail"><img src="../assets/google-logo-icon-png.png" class="logo-gmail">Login with Google</button>
-                    </div>
-
-                    <div class="barrier-form my-4">
-                        <div class="line-container">
-                            <hr class="line">
-                            <span class="line-text text-muted">or</span>
-                          </div>
-                    </div>
-
                     <div class="card-text">
+  <!-- FORM DISINI -->
                         <form action="cekLogin.php" method="post">
                             <div class="mb-4 fw-bold">
                               <label for="email" class="form-label">Email</label>
@@ -91,7 +91,7 @@
                           <div class="d-flex rem-pass">
 
                                 <div class="forgot-pass">
-                                    <a href="#">Forgot Password?</a>
+                                    <a href="forgot_password.php">Forgot Password?</a>
                                 </div>
                           </div>
 
