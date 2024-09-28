@@ -12,5 +12,5 @@ The FocusMate website is a website that helps its users to be able to focus on t
 
 **Disclaimer: This is a personal website, not for commercial purposes.    **
 
-*DONE : http://www.focusmate.my.id/*
+*DONE : [http://www.focusmate.my.id/*](https://focus-mate-tawny.vercel.app/)*
 
