@@ -1,1 +1,5 @@
-dist\inc_koneksi.php
+dist/inc_koneksi.php
+
+# folder
+dist/PHPMAILER/*
+dist/proses/*
