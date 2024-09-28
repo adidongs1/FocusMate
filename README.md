@@ -12,5 +12,5 @@ The FocusMate website is a website that helps its users to be able to focus on t
 
 **Disclaimer: This is a personal website, not for commercial purposes.    **
 
-*DONE : http://www.focusmate.my.id/*
+*DONE : [focusmate](https://vercel.live/link/focus-mate-4pg0daijx-adi-arifins-projects.vercel.app?via=deployment-domains-list-commit)/*
 
