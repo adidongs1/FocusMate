@@ -10,7 +10,7 @@ The FocusMate website is a website that helps its users to be able to focus on t
 **FOR TEAM NEXUS:** Please send me a message so I will receive your request soon! 🤘
 
 
-**Disclaimer: This is a personal website, not for commercial purposes.    **
+**Disclaimer: This is a personal website, not for commercial purposes.    **.
 
 *DONE : [focusmate](https://vercel.live/link/focus-mate-4pg0daijx-adi-arifins-projects.vercel.app?via=deployment-domains-list-commit)/*
 
